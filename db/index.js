@@ -9,6 +9,10 @@ var crypto = require('crypto'),
     Big = require('big.js'),
     once = require('once')
 
+const Hypercore = require('hypercore')
+const HyperDown = require('hyperbeedown')
+const Hyperbee  = require('hyperbee')
+
 exports.MAX_SIZE = 409600 // TODO: get rid of this? or leave for backwards compat?
 exports.create = create
 exports.lazy = lazyStream
@@ -41,14 +45,21 @@ exports.getIndexActions = getIndexActions
 
 function create(options) {
   options = options || {}
+  options.path = './hyperbee'
   if (options.createTableMs == null) options.createTableMs = 500
   if (options.deleteTableMs == null) options.deleteTableMs = 500
   if (options.updateTableMs == null) options.updateTableMs = 500
   if (options.maxItemSizeKb == null) options.maxItemSizeKb = exports.MAX_SIZE / 1024
   options.maxItemSize = options.maxItemSizeKb * 1024
 
-  var db = levelup(options.path ? require('leveldown')(options.path) : memdown()),
-      subDbs = Object.create(null),
+  var feed = Hypercore(options.path, {valueEncoding: 'utf-8' })
+  const bee = new Hyperbee(feed, {
+    keyEncoding: 'utf-8', // can be set to undefined (binary), utf-8, ascii or and abstract-encoding
+    valueEncoding: 'binary' // same options as above
+  })
+  var downdb = new HyperDown(bee)
+  var db = levelup(downdb)
+  var subDbs = Object.create(null),
       tableDb = getSubDb('table')
 
   // XXX: Is there a better way to get this?
