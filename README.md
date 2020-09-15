@@ -1,6 +1,7 @@
 # dynalite on Hyperbee (replacing LevelDB in original package)
 
 [![Build Status](https://api.travis-ci.org/mhart/dynalite.png?branch=master)](https://travis-ci.org/github/mhart/dynalite)
+This is an experiment so path is hardcoded to './hyperbee'
 
 An implementation of Amazon's DynamoDB built on [Hyperbee](https://github.com/mafintosh/hyperbee)
 (Hyperbee exposes [Hyperbeedown](https://github.com/andrewosh/hyperbeedown) (Leveldown), which was made posisble by [@rvagg](https://github.com/rvagg)'s [LevelUP](https://github.com/Level/levelup))
