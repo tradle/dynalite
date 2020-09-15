@@ -3,7 +3,7 @@
 [![Build Status](https://api.travis-ci.org/mhart/dynalite.png?branch=master)](https://travis-ci.org/github/mhart/dynalite)
 
 An implementation of Amazon's DynamoDB built on [Hyperbee](https://github.com/mafintosh/hyperbee)
-(well, [@rvagg](https://github.com/rvagg)'s awesome [LevelUP](https://github.com/Level/levelup) to be precise)
+(Hyperbee exposes [Hyperbeedown](https://github.com/andrewosh/hyperbeedown) (Leveldown), which was made posisble by [@rvagg](https://github.com/rvagg)'s [LevelUP](https://github.com/Level/levelup))
 for fast in-memory or persistent usage.
 
 This project aims to match the live DynamoDB instances as closely as possible
