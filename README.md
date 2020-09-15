@@ -1,8 +1,8 @@
-# dynalite on Hyperbee (replacing LevelDB)
+# dynalite on Hyperbee (replacing LevelDB in original package)
 
 [![Build Status](https://api.travis-ci.org/mhart/dynalite.png?branch=master)](https://travis-ci.org/github/mhart/dynalite)
 
-An implementation of Amazon's DynamoDB built on LevelDB
+An implementation of Amazon's DynamoDB built on [Hyperbee](https://github.com/mafintosh/hyperbee)
 (well, [@rvagg](https://github.com/rvagg)'s awesome [LevelUP](https://github.com/Level/levelup) to be precise)
 for fast in-memory or persistent usage.
 
