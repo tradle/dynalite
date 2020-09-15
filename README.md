@@ -1,4 +1,4 @@
-# dynalite
+# dynalite on Hyperbee (replacing LevelDB)
 
 [![Build Status](https://api.travis-ci.org/mhart/dynalite.png?branch=master)](https://travis-ci.org/github/mhart/dynalite)
 
