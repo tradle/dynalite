@@ -4,8 +4,7 @@
 This is an experiment so path is hardcoded to './hyperbee'
 
 An implementation of Amazon's DynamoDB built on [Hyperbee](https://github.com/mafintosh/hyperbee)
-(Hyperbee exposes [Hyperbeedown](https://github.com/andrewosh/hyperbeedown) (Leveldown)
-for fast in-memory or persistent usage.
+(Hyperbee exposes [Hyperbeedown](https://github.com/andrewosh/hyperbeedown) (Leveldown).
 
 This project aims to match the live DynamoDB instances as closely as possible
 (and is tested against them in various regions), including all limits and error messages.
