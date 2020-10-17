@@ -3,6 +3,7 @@ var crypto = require('crypto'),
   async = require('async'),
   Lazy = require('lazy'),
   levelup = require('levelup'),
+  debugdown = require('debugdown'),
   memdown = require('memdown'),
   sub = require('subleveldown'),
   lock = require('lock'),
@@ -57,7 +58,7 @@ function create(options) {
     valueEncoding: 'binary' // same options as above
   })
   var downdb = new HyperDown(bee)
-  var db = levelup(downdb)
+  var db = levelup(debugdown(downdb))
   var subDbs = Object.create(null),
     tableDb = getSubDb('table')
 
