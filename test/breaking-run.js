@@ -25,6 +25,7 @@ async function nohttp() {
         const idx = line.indexOf(',')
         const action = line.substring(0, idx)
         const data = JSON.parse(line.substring(idx + 1))
+        console.log('*******************************************************************')
         console.log(`Request: ${action}, data: ${JSON.stringify(data)}`)
         await new Promise((resolve, reject) => {
             actions[action](store, data, function (err, response) {
@@ -39,6 +40,7 @@ async function nohttp() {
                 }
                 let rrr = `action: ${action}, data: ${JSON.stringify(response)}`
                 console.log(`Response: " ${rrr}\n`)
+                console.log('*******************************************************************')
                 return resolve()
             })
         })
