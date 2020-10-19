@@ -52,7 +52,7 @@ function create(options) {
   if (options.maxItemSizeKb == null) options.maxItemSizeKb = exports.MAX_SIZE / 1024
   options.maxItemSize = options.maxItemSizeKb * 1024
 
-  var feed = Hypercore(options.path, { valueEncoding: 'utf-8' })
+  var feed = Hypercore(options.path) //, { valueEncoding: 'utf-8' })
   const bee = new Hyperbee(feed, {
     keyEncoding: 'utf-8', // can be set to undefined (binary), utf-8, ascii or and abstract-encoding
     valueEncoding: 'binary' // same options as above
